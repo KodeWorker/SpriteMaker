@@ -26,12 +26,12 @@ class FileMenu(object):
     def __init__(self, menu, parent):
         self.menu = menu
         self.parent = parent
-        self.InitFileMenuAction()
-        self.ComposeFileMenuAction()
+        self.InitFileMenuElements()
+        self.InitFileMenuLayout()
     
-    def InitFileMenuAction(self):
-        """ Initiate File Menu Actions
-            This method initiates all the file menu actions.
+    def InitFileMenuElements(self):
+        """ Initiate File Menu Elements
+            This method initiates all the file menu elements.
         """
         
         # MenuBar -> File -> New
@@ -102,9 +102,9 @@ class FileMenu(object):
         self.quitAct.setShortcut('Ctrl+Q')
         self.quitAct.triggered.connect(self.parent.QuitAct)
         
-    def ComposeFileMenuAction(self):
-        """ Compose File Menu Actions
-            This method composes all the file menu actions.
+    def InitFileMenuLayout(self):
+        """ Initiate File Menu Actions
+            This method initiates the file menu layout.
         """
         
         self.menu.addAction(self.newAct)

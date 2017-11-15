@@ -40,19 +40,16 @@ class WorkspaceControl(object):
         # Set docking properties
         self.dock = {}        
         # Top Components        
-        self.dock['Canvas'] = Dock('Canvas', self.parent)
-        self.dock['Canvas'].setObjectName('CanvasDock')        
+        self.dock['Canvas'] = Dock('Canvas', self.parent)        
         self.dock['Canvas'].setWidget(self.canvas)
         self.parent.addDockWidget(Qt.TopDockWidgetArea, self.dock['Canvas'])
         
-        self.dock['ColorWheel'] = Dock('ColorWheel', self.parent)        
-        self.dock['ColorWheel'].setObjectName('ColorWheelDock')
+        self.dock['ColorWheel'] = Dock('ColorWheel', self.parent)
         self.dock['ColorWheel'].setWidget(self.colorwheel)
         self.parent.addDockWidget(Qt.TopDockWidgetArea, self.dock['ColorWheel'])
         
         # Bottom Components
-        self.dock['Frame'] = Dock('Frame', self.parent)        
-        self.dock['Frame'].setObjectName('FrameDock')
+        self.dock['Frame'] = Dock('Frame', self.parent)
         self.dock['Frame'].setWidget(self.frame)
         self.parent.addDockWidget(Qt.BottomDockWidgetArea, self.dock['Frame'])
 
@@ -72,9 +69,14 @@ class Dock(QDockWidget):
         super().__init__(parent)
         self.name = name
         self.parent = parent
-        self.InitDeskDock()
+        self.InitDock()
     
-    def InitDeskDock(self):
+    def InitDock(self):
+        """ Initiate Dock
+            This method initiates docking properies.
+        """
+        
         self.setWindowTitle(self.name)
+        self.setObjectName(self.name)
         self.setAllowedAreas(Qt.LeftDockWidgetArea | Qt.RightDockWidgetArea)
         self.setFeatures(QDockWidget.AllDockWidgetFeatures)

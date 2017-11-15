@@ -5,14 +5,16 @@ from PyQt5.QtGui import QIcon, QPalette
 from PyQt5.QtCore import Qt
 
 from src.system.util.path import RelativePath
+from src.system.action.workspace.frame.manager import FrameManager
 
-class FrameWidget(QWidget):
+class FrameWidget(QWidget, FrameManager):
     
     def __init__(self, parent):
         super().__init__()
         self.parent = parent
         self.InitConfig()
-        self.InitFrame()
+        self.InitFrameElements()
+        self.InitFrameLayout()
         
     def InitConfig(self):
         config = ConfigParser()
@@ -20,8 +22,10 @@ class FrameWidget(QWidget):
         self.ratio = float(config['FRAME']['ratio'])
         self.margin =int(config['FRAME']['margin'])
         
-    def InitFrame(self):
+    def InitFrameElements(self):
+        # Time frame view
         self.parent.timeFrame = TimeFrame(self.parent)
+        # Play button
         self.parent.playBtn = QPushButton(QIcon(RelativePath('asset',
                                                       'image',
                                                       'workspace',
@@ -30,6 +34,7 @@ class FrameWidget(QWidget):
                                    '')
         self.parent.playBtn.clicked[bool].connect(self.PlayAct)
         
+        # Stop button
         self.parent.stopBtn = QPushButton(QIcon(RelativePath('asset',
                                                       'image',
                                                       'workspace',
@@ -37,6 +42,8 @@ class FrameWidget(QWidget):
                                                       'stop.png')),
                                    '')
         self.parent.stopBtn.clicked[bool].connect(self.StopAct)
+    
+    def InitFrameLayout(self):
         
         vbox = QVBoxLayout()
         hbox = QHBoxLayout()        
@@ -47,16 +54,11 @@ class FrameWidget(QWidget):
         
         vbox.addWidget(self.parent.playBtn)
         vbox.addWidget(self.parent.stopBtn)
+        vbox.addStretch()
         hbox.addWidget(self.parent.timeFrame, self.ratio)
         hbox.addLayout(vbox, 1-self.ratio)
         
         self.setLayout(hbox)
-
-    def PlayAct(self):
-        print('[Action] Frame -> Play')
-
-    def StopAct(self):
-        print('[Action] Frame -> Stop')
 
 class TimeFrame(QWidget):
     

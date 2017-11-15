@@ -26,12 +26,12 @@ class HelpMenu(object):
     def __init__(self, menu, parent):
         self.menu = menu
         self.parent = parent
-        self.InitFileMenuAction()
-        self.ComposeFileMenuAction()
+        self.InitFileMenuElements()
+        self.InitFileMenuLayout()
     
-    def InitFileMenuAction(self):
-        """ Initiate Help Menu Actions
-            This method initiates all the help menu actions.
+    def InitFileMenuElements(self):
+        """ Initiate Help Menu Elements
+            This method initiates all the help menu elements.
         """
         
         # MenuBar -> Help -> Report issue
@@ -57,9 +57,9 @@ class HelpMenu(object):
         # No shortcut
         self.aboutSpriteMaker.triggered.connect(self.parent.AboutSpriteMaker)
         
-    def ComposeFileMenuAction(self):
-        """ Compose Help Menu Actions
-            This method composes all the help menu actions.
+    def InitFileMenuLayout(self):
+        """ Initiate Help Menu Layout
+            This method initiates the help menu layout.
         """
         
         self.menu.addAction(self.reportIssue)        

@@ -6,7 +6,7 @@
 """
 from configparser import ConfigParser
 
-from PyQt5.QtWidgets import QAction, QToolBar
+from PyQt5.QtWidgets import QAction, QActionGroup, QToolBar
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt
 
@@ -25,8 +25,8 @@ class ToolBarControl(object):
     def __init__(self, parent):
         self.parent = parent
         self.InitConfig()
-        self.InitToolBarAction()
-        self.ComposeToolBarAction()
+        self.InitToolBarElements()
+        self.InitToolBarLayout()
     
     def InitConfig(self):
         """ Initiate Configuration
@@ -49,10 +49,12 @@ class ToolBarControl(object):
         else:
             raise ValueError('Error: No such tool bar area!')
     
-    def InitToolBarAction(self):
-        """ Initiate Tool Bar Actions
-            This method initiates all the tool bar actions.
+    def InitToolBarElements(self):
+        """ Initiate Tool Bar Elements
+            This method initiates all the tool bar elements.
         """
+        
+        toolGroup = QActionGroup(self.parent)
         
         # ToolBar -> Cursor
         self.cursorTool = QAction(
@@ -61,8 +63,12 @@ class ToolBarControl(object):
                                    'toolbar',
                                    'cursor.png')),
                 'cursor',
-                self.parent)
+                toolGroup)
+        self.cursorTool.setCheckable(True)
         self.cursorTool.triggered.connect(self.parent.CursorTool)
+        # Initial tool mode
+        self.parent.CursorTool()
+        self.cursorTool.setChecked(True)
         # ToolBar -> Pen
         self.penTool = QAction(
                 QIcon(RelativePath('asset',
@@ -70,7 +76,8 @@ class ToolBarControl(object):
                                    'toolbar',
                                    'pen.png')),
                 'Pen',
-                self.parent)
+                toolGroup)
+        self.penTool.setCheckable(True)
         self.penTool.triggered.connect(self.parent.PenTool)
         # ToolBar -> Eraser
         self.eraserTool = QAction(
@@ -79,7 +86,8 @@ class ToolBarControl(object):
                                    'toolbar',
                                    'eraser.png')),
                 'Eraser',
-                self.parent)
+                toolGroup)
+        self.eraserTool.setCheckable(True)
         self.eraserTool.triggered.connect(self.parent.EraserTool)
         # ToolBar -> Line
         self.lineTool = QAction(
@@ -88,7 +96,8 @@ class ToolBarControl(object):
                                    'toolbar',
                                    'line.png')), 
                 'Line', 
-                self.parent)
+                toolGroup)
+        self.lineTool.setCheckable(True)
         self.lineTool.triggered.connect(self.parent.LineTool)
         # ToolBar -> Paint Bucket
         self.paintBucketTool = QAction(
@@ -97,12 +106,13 @@ class ToolBarControl(object):
                                    'toolbar',
                                    'paint_bucket.png')),
                 'Paint Bucket',
-                self.parent)
+                toolGroup)
+        self.paintBucketTool.setCheckable(True)
         self.paintBucketTool.triggered.connect(self.parent.PaintBucketTool)
         
-    def ComposeToolBarAction(self):
-        """ Compose Tool Bar Actions
-            This method composes all the tool bar actions.
+    def InitToolBarLayout(self):
+        """ Initiate Tool Bar Layout
+            This method initiates the tool bar layout.
         """
         
         self.toolbar.addAction(self.cursorTool)
