@@ -1,4 +1,4 @@
-""" BATCH TEST ON ALL UNIT TESTS
+""" Batch Test on All Unit Tests
 # Description:
     This is the batch test for all the unit test in the directory.
 # Author: Shin-Fu (Kelvin) Wu
@@ -11,19 +11,20 @@ import os
 import argparse
 import unittest
 
-def Main():
+def Test():
     # Argument parser
     parser = argparse.ArgumentParser()
     parser.add_argument('dir', 
-                        help='This folder contains all the unittest files',
+                        help='This folder contains all the unit test files',
                         type=str)
     args = parser.parse_args()
     
     # Files in the Directory
     current_script = os.path.basename(__file__)    
-    test_files = [x[2] for x in os.walk(args.dir)][0]
-    testmodules = [x[:-3] for x in test_files if x != current_script and
-                   not x.endswith('.sh') and not x.endswith('.bat')]
+    test_files = [x[2] for x in os.walk(args.dir)]
+    test_files = [item for sublist in test_files for item in sublist]
+    testmodules = [x[:-3] for x in test_files if 
+                   x != current_script and x.endswith('.py')]
     suite = unittest.TestSuite()
     
     # Run unit tests
@@ -40,7 +41,7 @@ def Main():
     unittest.TextTestRunner().run(suite)
     
 if __name__ == '__main__':
-    Main()
+    Test()
 
 
 

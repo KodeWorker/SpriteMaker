@@ -1,3 +1,9 @@
+""" Tool Bar Control
+# Description:
+    This script contains the user-interface controller of tool bar elements.
+# Author: Shin-Fu (Kelvin) Wu
+# Date: 2017/11/15
+"""
 from configparser import ConfigParser
 
 from PyQt5.QtWidgets import QAction, QToolBar
@@ -7,6 +13,14 @@ from PyQt5.QtCore import Qt
 from src.system.util.path import RelativePath
 
 class ToolBarControl(object):
+    """ Tool Bar Control Class
+        This class is the controller of tool bar elements.
+        
+        Parameters
+        ----------
+        parent: QMainWindow
+            This is the main window of the program.
+    """
     
     def __init__(self, parent):
         self.parent = parent
@@ -15,6 +29,10 @@ class ToolBarControl(object):
         self.ComposeToolBarAction()
     
     def InitConfig(self):
+        """ Initiate Configuration
+            This method reads the values from config files.
+        """
+        
         self.toolbar = QToolBar('Paint Tool')
         self.toolbar.setObjectName('PaintTool')
         
@@ -32,6 +50,10 @@ class ToolBarControl(object):
             raise ValueError('Error: No such tool bar area!')
     
     def InitToolBarAction(self):
+        """ Initiate Tool Bar Actions
+            This method initiates all the tool bar actions.
+        """
+        
         # ToolBar -> Cursor
         self.cursorTool = QAction(
                 QIcon(RelativePath('asset',
@@ -79,6 +101,10 @@ class ToolBarControl(object):
         self.paintBucketTool.triggered.connect(self.parent.PaintBucketTool)
         
     def ComposeToolBarAction(self):
+        """ Compose Tool Bar Actions
+            This method composes all the tool bar actions.
+        """
+        
         self.toolbar.addAction(self.cursorTool)
         self.toolbar.addAction(self.penTool)
         self.toolbar.addAction(self.eraserTool)

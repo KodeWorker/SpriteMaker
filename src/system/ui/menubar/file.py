@@ -1,9 +1,27 @@
+""" File Menu Control
+# Description:
+    This script contains the user-interface controller of file menu in menu 
+    bar.
+# Author: Shin-Fu (Kelvin) Wu
+# Date: 2017/11/15
+"""
+
 from PyQt5.QtWidgets import QAction
 from PyQt5.QtGui import QIcon
 
 from src.system.util.path import RelativePath
 
 class FileMenu(object):
+    """ File Menu Class
+        This class is the controller of file menu elements.
+        
+        Parameters
+        ----------
+        menu: QMenu
+            This is the added controlling menu in menu bar.      
+        parent: QMainWindow
+            This is the main window of the program.
+    """
     
     def __init__(self, menu, parent):
         self.menu = menu
@@ -12,6 +30,10 @@ class FileMenu(object):
         self.ComposeFileMenuAction()
     
     def InitFileMenuAction(self):
+        """ Initiate File Menu Actions
+            This method initiates all the file menu actions.
+        """
+        
         # MenuBar -> File -> New
         self.newAct = QAction(
                 QIcon(RelativePath('asset',
@@ -81,6 +103,10 @@ class FileMenu(object):
         self.quitAct.triggered.connect(self.parent.QuitAct)
         
     def ComposeFileMenuAction(self):
+        """ Compose File Menu Actions
+            This method composes all the file menu actions.
+        """
+        
         self.menu.addAction(self.newAct)
         self.menu.addSeparator()
         self.menu.addAction(self.openAct)
