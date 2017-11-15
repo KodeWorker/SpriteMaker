@@ -7,7 +7,7 @@ from PyQt5.QtGui import QIcon
 from src.system.util.path import RelativePath
 from src.system.ui.menubar.control import MenuBarControl
 from src.system.ui.toolbar.control import ToolBarControl
-from src.system.ui.dock.control import DockControl
+from src.system.ui.workspace.control import DockControl
 from src.system.action.menubar.manager import MenuManager
 from src.system.action.toolbar.tool import ToolManager
 

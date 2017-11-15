@@ -12,6 +12,7 @@ class FileMenu(object):
         self.ComposeFileMenuAction()
     
     def InitFileMenuAction(self):
+        # MenuBar -> File -> New
         self.newAct = QAction(
                 QIcon(RelativePath('asset',
                                    'image',
@@ -22,7 +23,7 @@ class FileMenu(object):
                 self.parent)
         self.newAct.setShortcut('Ctrl+N')
         self.newAct.triggered.connect(self.parent.NewAct)
-        
+        # MenuBar -> File -> Open
         self.openAct = QAction(
                 QIcon(RelativePath('asset',
                                    'image',
@@ -33,7 +34,7 @@ class FileMenu(object):
                 self.parent)
         self.openAct.setShortcut('Ctrl+O')
         self.openAct.triggered.connect(self.parent.OpenAct)
-        
+        # MenuBar -> File -> Save
         self.saveAct = QAction(
                 QIcon(RelativePath('asset',
                                    'image',
@@ -44,15 +45,15 @@ class FileMenu(object):
                 self.parent)
         self.saveAct.setShortcut('Ctrl+S')
         self.saveAct.triggered.connect(self.parent.SaveAct)
-        
+        # MenuBar -> File -> Save all
         self.saveAllAct = QAction('&Save all', self.parent)
         self.saveAllAct.setShortcut('Ctrl+Alt+S')
         self.saveAllAct.triggered.connect(self.parent.SaveAllAct)
-        
+        # MenuBar -> File -> Save as
         self.saveAsAct = QAction('&Save as ...', self.parent)
         self.saveAsAct.setShortcut('Ctrl+Shift+S')
         self.saveAsAct.triggered.connect(self.parent.SaveAsAct)
-        
+        # MenuBar -> File -> Close
         self.closeAct = QAction(
                 QIcon(RelativePath('asset',
                                    'image',
@@ -63,11 +64,11 @@ class FileMenu(object):
                 self.parent)
         # No shortcut
         self.closeAct.triggered.connect(self.parent.CloseAct)
-        
+        # MenuBar -> File -> Close all
         self.closeAllAct = QAction('&Close all', self.parent)
         self.closeAllAct.setShortcut('Ctrl+Shift+W')
         self.closeAllAct.triggered.connect(self.parent.CloseAllAct)
-        
+        # MenuBar -> File -> Quit
         self.quitAct = QAction(
                 QIcon(RelativePath('asset', 
                                    'image',

@@ -12,7 +12,7 @@ class HelpMenu(object):
         self.ComposeFileMenuAction()
     
     def InitFileMenuAction(self):
-                
+        # MenuBar -> Help -> Report issue
         self.reportIssue = QAction(
                 QIcon(RelativePath('asset',
                                    'image',
@@ -23,7 +23,7 @@ class HelpMenu(object):
                 self.parent)
         # No shortcut
         self.reportIssue.triggered.connect(self.parent.ReportIssue)
-        
+        # MenuBar -> Help -> About SpriteMaker
         self.aboutSpriteMaker = QAction(
                 QIcon(RelativePath('asset',
                                    'image',

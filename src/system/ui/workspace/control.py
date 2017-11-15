@@ -1,9 +1,9 @@
 from PyQt5.QtWidgets import QDockWidget
 from PyQt5.QtCore import Qt
 
-from src.system.ui.dock.canvas import CanvasWidget
-from src.system.ui.dock.colorwheel import ColorWheelWidget
-from src.system.ui.dock.frame import FrameWidget
+from src.system.ui.workspace.canvas import CanvasWidget
+from src.system.ui.workspace.colorwheel import ColorWheelWidget
+from src.system.ui.workspace.frame import FrameWidget
 
 class DockControl(object):
     
@@ -19,27 +19,21 @@ class DockControl(object):
         self.dock = {}        
         # Top Components        
         self.dock['Canvas'] = Dock('Canvas', self.parent)
-        self.dock['Canvas'].setObjectName('CanvasDock')
-        self.parent.addDockWidget(Qt.TopDockWidgetArea, self.dock['Canvas'])
+        self.dock['Canvas'].setObjectName('CanvasDock')        
         self.dock['Canvas'].setWidget(self.canvas)
+        self.parent.addDockWidget(Qt.TopDockWidgetArea, self.dock['Canvas'])
         
-        self.dock['ColorWheel'] = Dock('ColorWheel', self.parent)
-        self.parent.addDockWidget(Qt.TopDockWidgetArea, self.dock['ColorWheel'])
+        self.dock['ColorWheel'] = Dock('ColorWheel', self.parent)        
         self.dock['ColorWheel'].setObjectName('ColorWheelDock')
         self.dock['ColorWheel'].setWidget(self.colorwheel)
+        self.parent.addDockWidget(Qt.TopDockWidgetArea, self.dock['ColorWheel'])
         
         # Bottom Components
-        self.dock['Frame'] = Dock('Frame', self.parent)
-        self.parent.addDockWidget(Qt.BottomDockWidgetArea, self.dock['Frame'])
+        self.dock['Frame'] = Dock('Frame', self.parent)        
         self.dock['Frame'].setObjectName('FrameDock')
         self.dock['Frame'].setWidget(self.frame)
-        
-        # Fixed DockWidget Size
-#        self.dock['ColorWheel'].setMinimumWidth(300)
-#        self.dock['ColorWheel'].setMaximumWidth(300)
-#        self.dock['Frame'].setMinimumHeight(150)
-#        self.dock['Frame'].setMaximumHeight(150)
-        
+        self.parent.addDockWidget(Qt.BottomDockWidgetArea, self.dock['Frame'])
+
 class Dock(QDockWidget):
     
     def __init__(self, name, parent=None):
