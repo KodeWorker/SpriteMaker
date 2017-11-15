@@ -1,11 +1,11 @@
-""" Frame Manager
+""" Frame Control
 # Description:
     This scrpit contains the actions of all elements in frame workspace.
 # Author: Shin-Fu (Kelvin) Wu
 # Date: 2017/11/15
 """
 
-class FrameManager(object):
+class FrameControl(object):
     """ Frame Manager Class
         This class contains all the actions of in frame workspace.
     """

@@ -1,4 +1,4 @@
-""" Help Menu Control
+""" Help Menu Management
 # Description:
     This script contains the user-interface controller of help menu in menu 
     bar.
@@ -13,7 +13,7 @@ from src.system.util.path import RelativePath
 
 class HelpMenu(object):
     """ File Menu Class
-        This class is the controller of help menu elements.
+        This class is the manager of help menu elements.
         
         Parameters
         ----------

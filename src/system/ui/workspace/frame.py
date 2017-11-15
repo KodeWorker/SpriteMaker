@@ -5,9 +5,9 @@ from PyQt5.QtGui import QIcon, QPalette
 from PyQt5.QtCore import Qt
 
 from src.system.util.path import RelativePath
-from src.system.action.workspace.frame.manager import FrameManager
+from src.system.action.workspace.frame.control import FrameControl
 
-class FrameWidget(QWidget, FrameManager):
+class FrameWidget(QWidget, FrameControl):
     
     def __init__(self, parent):
         super().__init__()

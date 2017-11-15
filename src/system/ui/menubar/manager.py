@@ -1,6 +1,6 @@
-""" Menu Bar Control
+""" Menu Bar Manager
 # Description:
-    This script contains the higher-level controller of menu bar elements.
+    This script contains the higher-level manager of menu bar elements.
 # Author: Shin-Fu (Kelvin) Wu
 # Date: 2017/11/15
 """
@@ -8,9 +8,9 @@
 from src.system.ui.menubar.file import FileMenu
 from src.system.ui.menubar.help import HelpMenu
 
-class MenuBarControl(object):
-    """ Menu Bar Control Class    
-        This class is the controller of menu bar elements.
+class MenuBarManager(object):
+    """ Menu Bar Manager Class    
+        This class is the manager of menu bar elements.
         
         Parameters
         ----------

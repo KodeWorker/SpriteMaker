@@ -1,13 +1,13 @@
-""" Tool Bar Manager
+""" Tool Bar Control
 # Description:
     This scrpit contains the actions of all tool bar elements.
 # Author: Shin-Fu (Kelvin) Wu
 # Date: 2017/11/15
 """
 
-class ToolBarManager(object):
-    """ Tool Bar Manager Class
-        This class contains all the actions of each menu bar element.
+class ToolBarControl(object):
+    """ Tool Bar Control Class
+        This class contains all the actions of each menu bar action.
     """
     
     def CursorTool(self):

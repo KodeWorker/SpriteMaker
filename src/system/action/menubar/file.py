@@ -1,13 +1,13 @@
-""" File Action Manager
+""" File Action Control
 # Description:
-    This script contains all the classes/functions related to file system in 
-    menu bar.
+    This script contains all the classes/functions related to file system 
+    actions in menu bar.
 # Author: Shin-Fu (Kelvin) Wu
 # Date: 2017/11/15
 """
 
-class FileManager(object):
-    """ File Manager Class
+class FileControl(object):
+    """ File Control Class
         This contains the window actions related to file system.
     """
     

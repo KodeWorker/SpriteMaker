@@ -1,6 +1,6 @@
-""" Tool Bar Control
+""" Tool Bar Manager
 # Description:
-    This script contains the user-interface controller of tool bar elements.
+    This script contains the user-interface manager of tool bar elements.
 # Author: Shin-Fu (Kelvin) Wu
 # Date: 2017/11/15
 """
@@ -12,9 +12,9 @@ from PyQt5.QtCore import Qt
 
 from src.system.util.path import RelativePath
 
-class ToolBarControl(object):
-    """ Tool Bar Control Class
-        This class is the controller of tool bar elements.
+class ToolBarManager(object):
+    """ Tool Bar Manager Class
+        This class is the manager of tool bar elements.
         
         Parameters
         ----------

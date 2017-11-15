@@ -1,6 +1,6 @@
-""" Workspace Control
+""" Workspace Manager
 # Description:
-    This script contains the higher-level controller of workspace elements.
+    This script contains the higher-level manager of workspace elements.
 # Author: Shin-Fu (Kelvin) Wu
 # Date: 2017/11/15
 """
@@ -12,9 +12,9 @@ from src.system.ui.workspace.canvas import CanvasWidget
 from src.system.ui.workspace.colorwheel import ColorWheelWidget
 from src.system.ui.workspace.frame import FrameWidget
 
-class WorkspaceControl(object):
-    """ Workspace Control Class
-        This class is the controller of workspace elements
+class WorkspaceManager(object):
+    """ Workspace Manager Class
+        This class is the manager of workspace elements
         
         Parameters
         ----------

@@ -1,4 +1,4 @@
-""" File Menu Control
+""" File Menu Management
 # Description:
     This script contains the user-interface controller of file menu in menu 
     bar.
@@ -13,7 +13,7 @@ from src.system.util.path import RelativePath
 
 class FileMenu(object):
     """ File Menu Class
-        This class is the controller of file menu elements.
+        This class is the manager of file menu elements.
         
         Parameters
         ----------
