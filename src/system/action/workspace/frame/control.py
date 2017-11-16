@@ -15,3 +15,9 @@ class FrameControl(object):
         
     def StopAct(self):
         print('[Action] Frame -> Stop')
+    
+    def LoopAct(self):
+        if self.loopBtn.isChecked():
+            print('[Action] Frame -> Loop On')
+        else:
+            print('[Action] Frame -> Loop Off')

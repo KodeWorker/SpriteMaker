@@ -1,9 +1,9 @@
 """ File Menu Management
 # Description:
-    This script contains the user-interface controller of file menu in menu 
+    This script contains the user-interface manager of file menu in menu 
     bar.
 # Author: Shin-Fu (Kelvin) Wu
-# Date: 2017/11/15
+# Date: 2017/11/16
 """
 
 from PyQt5.QtWidgets import QAction
@@ -45,7 +45,7 @@ class FileMenu(object):
                 self.parent)
         self.newAct.setShortcut('Ctrl+N')
         self.newAct.triggered.connect(self.parent.NewAct)
-        # MenuBar -> File -> Open
+        # MenuBar -> File -> Open ...
         self.openAct = QAction(
                 QIcon(RelativePath('asset',
                                    'image',

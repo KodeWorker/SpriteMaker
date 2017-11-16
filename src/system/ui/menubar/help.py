@@ -1,6 +1,6 @@
 """ Help Menu Management
 # Description:
-    This script contains the user-interface controller of help menu in menu 
+    This script contains the user-interface manager of help menu in menu 
     bar.
 # Author: Shin-Fu (Kelvin) Wu
 # Date: 2017/11/15

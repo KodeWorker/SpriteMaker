@@ -12,6 +12,3 @@ class MenuBarControl(FileControl, HelpControl):
     """ Menu Bar Control Class
         This class contains all the controls of each menu bar action.
     """
-    
-    pass
-

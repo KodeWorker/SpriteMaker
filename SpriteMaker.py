@@ -54,7 +54,7 @@ class SpriteMaker(QMainWindow,
         center_point = QDesktopWidget().availableGeometry().center()
         self.frameGeometry().moveCenter(center_point)
         
-        # UI manager
+        # UI managers
         MenuBarManager(self)
         ToolBarManager(self)
         WorkspaceManager(self)
