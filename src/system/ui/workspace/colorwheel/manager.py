@@ -6,13 +6,13 @@ from PyQt5.QtCore import QSize
 from src.system.util.path import RelativePath
 from src.system.ui.workspace.colorwheel.base import ColorWheel
 
-class ColorWheelWidget(QWidget):
+class ColorWheelManager(QWidget):
     
     def __init__(self, parent):
         super().__init__()
         self.parent = parent
         self.InitConfig()
-        self.InitColorWheel()
+        self.InitColorWheelManager()
     
     def InitConfig(self):
         config = ConfigParser()
@@ -24,7 +24,7 @@ class ColorWheelWidget(QWidget):
         self.margin = int(config['COLORWHEEL']['margin'])
         self.spacing = int(config['COLORWHEEL']['spacing'])
         
-    def InitColorWheel(self):
+    def InitColorWheelManager(self):
         self.colorWheel = ColorWheel(self.parent)
         
         vbox = QVBoxLayout()

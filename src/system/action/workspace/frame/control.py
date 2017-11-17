@@ -6,7 +6,7 @@
 """
 
 class FrameControl(object):
-    """ Frame Manager Class
+    """ Frame Control Class
         This class contains all the actions of in frame workspace.
     """
     

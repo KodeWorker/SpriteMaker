@@ -1,4 +1,7 @@
 #!bin/bash
-read -rep "Unit test directory: >>" dir
+echo "Test Directories:"
+ls
+
+read -rep "Test directory: (\".\" for all) >> " dir
 python BatchTest.py ${dir}
 $SHELL

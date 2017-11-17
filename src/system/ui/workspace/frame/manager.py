@@ -8,14 +8,13 @@ from src.system.ui.workspace.frame.base import TimeLine
 from src.system.action.workspace.frame.control import FrameControl
 
 
-class FrameWidget(QWidget, FrameControl):
+class FrameManager(QWidget, FrameControl):
     
     def __init__(self, parent):
         super().__init__()
         self.parent = parent
         self.InitConfig()
-        self.InitFrameElements()
-        self.InitFrameLayout()
+        self.InitFrameManager()
         
     def InitConfig(self):
         config = ConfigParser()
@@ -23,7 +22,11 @@ class FrameWidget(QWidget, FrameControl):
         self.ratio = float(config['FRAME']['ratio'])
         self.margin = int(config['FRAME']['margin'])
         self.spacing = int(config['FRAME']['spacing'])
-        
+    
+    def InitFrameManager(self):
+        self.InitFrameElements()
+        self.InitFrameLayout()
+    
     def InitFrameElements(self):
         self.parent.frameWidget = self
         

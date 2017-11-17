@@ -8,9 +8,9 @@
 from PyQt5.QtWidgets import QDockWidget
 from PyQt5.QtCore import Qt
 
-from src.system.ui.workspace.canvas.manager import CanvasWidget
-from src.system.ui.workspace.colorwheel.manager import ColorWheelWidget
-from src.system.ui.workspace.frame.manager import FrameWidget
+from src.system.ui.workspace.canvas.manager import CanvasManager
+from src.system.ui.workspace.colorwheel.manager import ColorWheelManager
+from src.system.ui.workspace.frame.manager import FrameManager
 
 class WorkspaceManager(object):
     """ Workspace Manager Class
@@ -33,28 +33,28 @@ class WorkspaceManager(object):
         """
         
         # Initiate elements
-        self.parent.canvasWidget = CanvasWidget(self.parent)
-        self.parent.colorwheelWidget = ColorWheelWidget(self.parent)
-        self.parent.frameWidget = FrameWidget(self.parent)
+        self.parent.canvasManager = CanvasManager(self.parent)
+        self.parent.colorwheelManager = ColorWheelManager(self.parent)
+        self.parent.frameManager = FrameManager(self.parent)
         
         # Set docking properties
         self.dock = {}        
         # Top Components        
         self.dock['Canvas'] = TopButtomDock('Canvas', self.parent)        
-        self.dock['Canvas'].setWidget(self.parent.canvasWidget)
+        self.dock['Canvas'].setWidget(self.parent.canvasManager)
         self.parent.addDockWidget(Qt.TopDockWidgetArea, self.dock['Canvas'])
         
         self.dock['ColorWheel'] = TopButtomDock('ColorWheel', self.parent)
-        self.dock['ColorWheel'].setWidget(self.parent.colorwheelWidget)
+        self.dock['ColorWheel'].setWidget(self.parent.colorwheelManager)
         self.parent.addDockWidget(Qt.TopDockWidgetArea, self.dock['ColorWheel'])
         
         # Bottom Components
         self.dock['Frame'] = TopButtomDock('Frame', self.parent)
-        self.dock['Frame'].setWidget(self.parent.frameWidget)
+        self.dock['Frame'].setWidget(self.parent.frameManager)
         self.parent.addDockWidget(Qt.BottomDockWidgetArea, self.dock['Frame'])
 
 class TopButtomDock(QDockWidget):
-    """ Dock Class
+    """ Top/Buttom Dock Class
         This class is QDockWidget with corresponding name of workspaces.
         
         Parameters
