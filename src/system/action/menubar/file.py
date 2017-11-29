@@ -2,35 +2,46 @@
 # Description:
     This script contains all the classes/functions related to file system 
     actions in menu bar.
-# Author: Shin-Fu (Kelvin) Wu
-# Date: 2017/11/15
+# Author: Shin-Fu (Kelvin) Wu <fxp61005@gmail.com>
+# Date: 2017/11/21
 """
 
-class FileControl(object):
+from src.system.action.base import BaseController
+
+class FileControl(BaseController):
     """ File Control Class
         This contains the window actions related to file system.
+        
     """
-    
+        
     def NewAct(self):
-        print('[Action] File -> New')
+        if self.enable:
+            print('[Action] File -> New')
 
     def OpenAct(self):
-        print('[Action] File -> Open ...')
+        if self.enable:
+            print('[Action] File -> Open ...')
     
     def SaveAct(self):
-        print('[Action] File -> Save')
+        if self.enable:
+            print('[Action] File -> Save')
         
     def SaveAllAct(self):
-        print('[Action] File -> Save all')
+        if self.enable:
+            print('[Action] File -> Save all')
         
     def SaveAsAct(self):
-        print('[Action] File -> Save as ...')
+        if self.enable:
+            print('[Action] File -> Save as ...')
     
     def CloseAct(self):
-        print('[Action] File -> Close')
+        if self.enable:
+            print('[Action] File -> Close')
     
     def CloseAllAct(self):
-        print('[Action] File -> Close all')
+        if self.enable:
+            print('[Action] File -> Close all')
     
     def QuitAct(self):
-        print('[Action] File -> Quit')
+        if self.enable:
+            print('[Action] File -> Quit')

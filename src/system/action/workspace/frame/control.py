@@ -1,23 +1,28 @@
 """ Frame Control
 # Description:
     This scrpit contains the actions of all elements in frame workspace.
-# Author: Shin-Fu (Kelvin) Wu
-# Date: 2017/11/15
+# Author: Shin-Fu (Kelvin) Wu <fxp61005@gmail.com>
+# Date: 2017/11/21
 """
 
-class FrameControl(object):
+from src.system.action.base import BaseController
+
+class FrameControl(BaseController):
     """ Frame Control Class
         This class contains all the actions of in frame workspace.
     """
     
     def PlayAct(self):
-        print('[Action] Frame -> Play')
+        if self.enable:
+            print('[Action] Frame -> Play')
         
     def StopAct(self):
-        print('[Action] Frame -> Stop')
+        if self.enable:
+            print('[Action] Frame -> Stop')
     
     def LoopAct(self):
-        if self.loopBtn.isChecked():
-            print('[Action] Frame -> Loop On')
-        else:
-            print('[Action] Frame -> Loop Off')
+        if self.enable:
+            if self.loopBtn.isChecked():
+                print('[Action] Frame -> Loop On')
+            else:
+                print('[Action] Frame -> Loop Off')

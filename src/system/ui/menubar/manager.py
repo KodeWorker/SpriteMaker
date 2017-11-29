@@ -1,7 +1,7 @@
 """ Menu Bar Manager
 # Description:
     This script contains the higher-level manager of menu bar elements.
-# Author: Shin-Fu (Kelvin) Wu
+# Author: Shin-Fu (Kelvin) Wu <fxp61005@gmail.com>
 # Date: 2017/11/15
 """
 

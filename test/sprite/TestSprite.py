@@ -1,3 +1,10 @@
+""" Unittest for Sprite Class
+# Description:
+    Unit test for accessment and funtionality of Sprite object.
+# Author: Shin-Fu (Kelvin) Wu <fxp61005@gmail.com>
+# Date: 2017/11/29
+"""
+
 import unittest
 
 import os

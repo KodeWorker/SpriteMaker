@@ -1,7 +1,7 @@
 """ Tool Bar Manager
 # Description:
     This script contains the user-interface manager of tool bar elements.
-# Author: Shin-Fu (Kelvin) Wu
+# Author: Shin-Fu (Kelvin) Wu <fxp61005@gmail.com>
 # Date: 2017/11/15
 """
 from configparser import ConfigParser

@@ -2,7 +2,7 @@
 # Description:
     This scrpit contains the classes/functions of file system of a sprite 
     sheet.
-# Author: Shin-Fu (Kelvin) Wu
+# Author: Shin-Fu (Kelvin) Wu <fxp61005@gmail.com>
 # Date: 2017/11/17
 # Reference: https://docs.scipy.org/doc/numpy-1.10.1/user/basics.subclassing.html
 """
@@ -45,7 +45,13 @@ class SpriteSheetControl(object):
         self.sheet = []
         self.ptr = 0
         self.sheet.append(self.initSprite)
-
+    
+    def DupLastSprite(self):
+        """ Duplicate the Last Sprite
+            This method copy the last frame in the sheet and append at the end.
+        """
+        self.sheet.append(self.sheet[-1].copy())
+    
 class Sprite(ndarray):
     """ Sprite Class
         This class is an array of QColors.
@@ -61,4 +67,4 @@ class Sprite(ndarray):
     
     def InitSprite(self):
         # Fill transparent pixels
-        self.fill(QColor(0, 0, 0, 0))    
+        self.fill(QColor(0, 0, 0, 0))

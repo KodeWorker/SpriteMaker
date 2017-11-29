@@ -2,7 +2,7 @@
 # Description:
     This scrpit contains the higher-level controls of all actions in canvas
     workspace.
-# Author: Shin-Fu (Kelvin) Wu
+# Author: Shin-Fu (Kelvin) Wu <fxp61005@gmail.com>
 # Date: 2017/11/16
 """
 

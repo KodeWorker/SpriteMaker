@@ -1,7 +1,7 @@
 """ Batch Test on All Unit Tests
 # Description:
     This is the batch test for all the unit test in the directory.
-# Author: Shin-Fu (Kelvin) Wu
+# Author: Shin-Fu (Kelvin) Wu <fxp61005@gmail.com>
 # Date: 2017/11/15
 # Reference: https://stackoverflow.com/questions/1732438/
              how-do-i-run-all-python-unit-tests-in-a-directory
@@ -35,8 +35,7 @@ def Test():
     testModules = [x.replace('.py', '') for x in testModules]
     
     suite = unittest.TestSuite()
-    
-    
+        
     # Run unit tests
     for t in testModules:
         try:

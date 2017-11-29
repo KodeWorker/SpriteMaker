@@ -1,7 +1,7 @@
 """ Menu Bar Control
 # Description:
     This scrpit contains the higher-level control of all menu bar actions.
-# Author: Shin-Fu (Kelvin) Wu
+# Author: Shin-Fu (Kelvin) Wu <fxp61005@gmail.com>
 # Date: 2017/11/15
 """
 

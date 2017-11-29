@@ -2,7 +2,7 @@
 # Description:
     This script contains the user-interface manager of help menu in menu 
     bar.
-# Author: Shin-Fu (Kelvin) Wu
+# Author: Shin-Fu (Kelvin) Wu <fxp61005@gmail.com>
 # Date: 2017/11/15
 """
 

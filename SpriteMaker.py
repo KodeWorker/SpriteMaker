@@ -1,7 +1,7 @@
 """ Sprite Maker
 # Description:
     This is the main program of Sprite Maker.
-# Author: Shin-Fu (Kelvin) Wu
+# Author: Shin-Fu (Kelvin) Wu <fxp61005@gmail.com>
 # Date: 2017/11/15
 """
 import sys
@@ -23,28 +23,28 @@ class SpriteMaker(QMainWindow,
     """ Sprite Maker Class
         This class is the main window of the program.
     """
-    
+
     def __init__(self):
         super().__init__()
         self.InitConfig()
         self.InitUI()
-        
+
     def InitConfig(self):
         """ Initiate Configuration
             This method reads the values from config files.
         """
-        
+
         config = ConfigParser()
         config.read(RelativePath('config', 'default.conf'))
         self.windowTitle = config['WINDOW']['title']
         self.windowWidth = int(config['WINDOW']['width'])
         self.windowHeight = int(config['WINDOW']['height'])
-        
+
     def InitUI(self):
         """ Initiate User-Interface
             This method initiates the main window and its UI managers.
         """
-        
+
         # Window initiation
         self.setWindowTitle(self.windowTitle)
         self.setWindowIcon(QIcon(RelativePath('asset',
@@ -53,14 +53,13 @@ class SpriteMaker(QMainWindow,
         self.resize(self.windowWidth, self.windowHeight)
         center_point = QDesktopWidget().availableGeometry().center()
         self.frameGeometry().moveCenter(center_point)
-        
+
         # UI managers
         MenuBarManager(self)
         ToolBarManager(self)
         WorkspaceManager(self)
-        
         self.show()
-    
+
 if __name__ == '__main__':
 
     app = QApplication(sys.argv)

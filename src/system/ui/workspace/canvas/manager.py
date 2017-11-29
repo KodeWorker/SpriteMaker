@@ -1,7 +1,7 @@
 """ Canvas Widget Management
 # Description:
     This script is the manager of elements in Canvas Widgets.
-# Author: Shin-Fu (Kelvin) Wu
+# Author: Shin-Fu (Kelvin) Wu <fxp61005@gmail.com>
 # Date: 2017/11/16
 """
 

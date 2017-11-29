@@ -1,7 +1,7 @@
 """ Workspace Manager
 # Description:
     This script contains the higher-level manager of workspace elements.
-# Author: Shin-Fu (Kelvin) Wu
+# Author: Shin-Fu (Kelvin) Wu <fxp61005@gmail.com>
 # Date: 2017/11/15
 """
 
@@ -11,6 +11,7 @@ from PyQt5.QtCore import Qt
 from src.system.ui.workspace.canvas.manager import CanvasManager
 from src.system.ui.workspace.colorwheel.manager import ColorWheelManager
 from src.system.ui.workspace.frame.manager import FrameManager
+from src.system.sprite.control import SpriteSheetControl
 
 class WorkspaceManager(object):
     """ Workspace Manager Class
